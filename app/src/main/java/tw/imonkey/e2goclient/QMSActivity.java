@@ -153,6 +153,11 @@ public class QMSActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 TVQMSServerValue.setText(dataSnapshot.child("message").getValue().toString());
                 //Todo:alert customer
+                NotifyUser.IIDPUSH(deviceId,"i0932702567@gmail.com","message_title","message_body");
+                NotifyUser.topicsPUSH(deviceId,"i0932702567@gmail.com","message_title","message_body");
+                NotifyUser.emailPUSH(deviceId,"i0932702567@gmail.com","message");
+                NotifyUser.SMSPUSH(deviceId,"i0932702567@gmail.com","message");
+
                 String toSpeak ="號碼牌"+dataSnapshot.child("message").getValue().toString()+"號";
                 tts.speak(toSpeak,TextToSpeech.QUEUE_ADD, null,null);
                 Animation anim = new AlphaAnimation(0.0f, 1.0f);
