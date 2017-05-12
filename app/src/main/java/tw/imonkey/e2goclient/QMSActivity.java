@@ -97,7 +97,7 @@ public class QMSActivity extends AppCompatActivity {
             }
         });
         deviceOnline();
-        mQMSClient= FirebaseDatabase.getInstance().getReference("/QMS/"+deviceId+"/CLIENT");
+        mQMSClient= FirebaseDatabase.getInstance().getReference("/LOG/QMS/"+deviceId+"/CLIENT");
         mQMSClient.limitToLast(1).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -121,7 +121,7 @@ public class QMSActivity extends AppCompatActivity {
         TVQMSClientValue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mQMSClient= FirebaseDatabase.getInstance().getReference("/QMS/"+deviceId+"/CLIENT");
+                mQMSClient= FirebaseDatabase.getInstance().getReference("/LOG/QMS/"+deviceId+"/CLIENT");
                 countClient.clear();
                 countClient.put("message",Integer.parseInt(TVQMSClientValue .getText().toString())+1);
                 countClient.put("memberEmail",memberEmail);
@@ -147,7 +147,7 @@ public class QMSActivity extends AppCompatActivity {
             }
         });
 
-        mQMSServer= FirebaseDatabase.getInstance().getReference("/QMS/"+deviceId+"/SERVER");
+        mQMSServer= FirebaseDatabase.getInstance().getReference("/LOG/QMS/"+deviceId+"/SERVER");
         mQMSServer.limitToLast(1).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -221,14 +221,14 @@ public class QMSActivity extends AppCompatActivity {
 
     //device online check
     private void deviceOnline(){
-        mQMSServerLive=FirebaseDatabase.getInstance().getReference("/QMS/"+deviceId+"/connection");
+        mQMSServerLive=FirebaseDatabase.getInstance().getReference("/LOG/QMS/"+deviceId+"/connection");
         mQMSServerLive.setValue(true);
         mQMSServerLive.onDisconnect().setValue(null);
 
-        presenceRef = FirebaseDatabase.getInstance().getReference("/master/"+memberEmail.replace(".", "_")+"/"+deviceId+"/connection");
+        presenceRef = FirebaseDatabase.getInstance().getReference("/FUI/"+memberEmail.replace(".", "_")+"/"+deviceId+"/connection");
         presenceRef.setValue(true);
         presenceRef.onDisconnect().setValue(null);
-        lastOnlineRef =FirebaseDatabase.getInstance().getReference("/master/"+memberEmail.replace(".", "_")+"/"+deviceId+"/lastOnline");
+        lastOnlineRef =FirebaseDatabase.getInstance().getReference("/FUI/"+memberEmail.replace(".", "_")+"/"+deviceId+"/lastOnline");
         lastOnlineRef.onDisconnect().setValue(ServerValue.TIMESTAMP);
         connectedRef = FirebaseDatabase.getInstance().getReference(".info/connected");
         connectedRef.addValueEventListener(new ValueEventListener() {
@@ -250,7 +250,7 @@ public class QMSActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot childSnapshot : snapshot.getChildren()) {
-                    final DatabaseReference  presenceRefF= FirebaseDatabase.getInstance().getReference("/friend/"+childSnapshot.getValue().toString().replace(".", "_")+"/"+deviceId+"/connection");//childSnapshot.getValue().toString():email
+                    final DatabaseReference  presenceRefF= FirebaseDatabase.getInstance().getReference("/FUI/"+childSnapshot.getValue().toString().replace(".", "_")+"/"+deviceId+"/connection");//childSnapshot.getValue().toString():email
                     presenceRefF.setValue(true);
                     presenceRefF.onDisconnect().setValue(null);
                     connectedRefF = FirebaseDatabase.getInstance().getReference(".info/connected");

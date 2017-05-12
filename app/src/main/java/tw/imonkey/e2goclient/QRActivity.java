@@ -119,7 +119,7 @@ public class QRActivity extends AppCompatActivity {
 
     private void barcodeDetected(String s){
         Toast.makeText(this,"你的號碼:"+number+"號",Toast.LENGTH_LONG).show();
-        mCountClient= FirebaseDatabase.getInstance().getReference("/QMS/"+deviceId+"/CLIENT");
+        mCountClient= FirebaseDatabase.getInstance().getReference("/LOG/QMS/"+deviceId+"/CLIENT");
         countClient.clear();
         countClient.put("message",Integer.parseInt(number)+1);
         countClient.put("memberEmail",s);

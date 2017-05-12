@@ -53,7 +53,6 @@ public class LoginActivity extends AppCompatActivity {
                 if (resultCode == RESULT_CANCELED) {
                     displayMessage(getString(R.string.signin_failed));
                 }
-                return;
         }else {
             displayMessage(getString(R.string.unknown_response));
         }

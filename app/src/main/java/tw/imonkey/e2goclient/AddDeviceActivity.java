@@ -60,7 +60,7 @@ public class AddDeviceActivity extends AppCompatActivity {
         String device = editTextAddDevice.getText().toString().trim();
         String description = editTextAddDescription.getText().toString().trim();
         if (!(TextUtils.isEmpty(companyId) ||TextUtils.isEmpty(device)||TextUtils.isEmpty(description))) {
-            mAddMaster= FirebaseDatabase.getInstance().getReference("/master/" +memberEmail.replace(".", "_"));
+            mAddMaster= FirebaseDatabase.getInstance().getReference("/FUI/" +memberEmail.replace(".", "_"));
             deviceId =mAddMaster.push().getKey();
             Map<String, Object> addMaster = new HashMap<>();
             addMaster.put("companyId",companyId) ;
