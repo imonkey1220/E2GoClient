@@ -35,15 +35,14 @@ import java.util.Map;
 public class QMSActivity extends AppCompatActivity {
     TextView TVQMSClientValue ,TVQMSServerValue,TVQMSClientTile,TVQMSDevice;
     ImageView QMSQRImage ;
+    DatabaseReference mQMSServer,mQMSClient,mQMSServerLive;
     TextToSpeech tts ;
-
-    String memberEmail,device,deviceId;
     Map<String, Object> countClient = new HashMap<>();
 
+    String memberEmail,device,deviceId;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
-    DatabaseReference mQMSServer,mQMSClient,presenceRef,lastOnlineRef,connectedRef, mFriend,connectedRefF,mQMSServerLive;
-
+    DatabaseReference presenceRef,lastOnlineRef,connectedRef, mFriend,connectedRefF ;
     public static final String devicePrefs = "devicePrefs";
     public static final String service="QMS"; //取號機 deviceType
 

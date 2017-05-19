@@ -38,10 +38,12 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MENUActivity"
+        <activity
+            android:name=".MENUActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/Menu"
             android:screenOrientation="landscape" />
+        <activity android:name=".POINTSActivity"></activity>
     </application>
 
 </manifest>
