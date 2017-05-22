@@ -37,13 +37,18 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MENUActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:label="@string/Menu"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="landscape" />
-        <activity android:name=".POINTSActivity"></activity>
+        <activity
+            android:name=".STAMPActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/STAMP"
+            android:screenOrientation="landscape" />
+        <activity android:name=".POINTSActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/POINTS"
+            android:screenOrientation="landscape"  />
+
     </application>
 
 </manifest>

@@ -41,15 +41,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2Menu"
+        android:id="@+id/textView2STAMP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:onClick="ToMENU"
-        android:text="點餐機"
+        android:layout_marginLeft="26dp"
+        android:onClick="ToSTAMP"
+        android:text="集章機"
         android:textAlignment="center"
         android:textColor="@android:color/holo_red_light"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView2QMS"
         app:layout_constraintLeft_toRightOf="@+id/textView2QMS" />
+
+    <TextView
+        android:id="@+id/textView2POINTS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:onClick="ToPOINTS"
+        android:text="集點機"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="36sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView2STAMP"
+        app:layout_constraintLeft_toRightOf="@+id/textView2STAMP" />
 </android.support.constraint.ConstraintLayout>

@@ -21,19 +21,21 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,QMSActivity.class);
         startActivity(intent);
         finish();
-
     }
     public void ToTC(View v){
         Intent intent = new Intent(this,TCActivity.class);
         startActivity(intent);
         finish();
-
     }
-    public void ToMENU(View v){
-        Intent intent = new Intent(this,MENUActivity.class);
+    public void ToSTAMP(View v){
+        Intent intent = new Intent(this,STAMPActivity.class);
         startActivity(intent);
         finish();
-
+    }
+    public void ToPOINTS(View v) {
+        Intent intent = new Intent(this, POINTSActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }
