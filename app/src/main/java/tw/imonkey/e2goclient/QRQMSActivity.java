@@ -27,7 +27,7 @@ import java.util.Map;
 
 import static com.google.android.gms.vision.CameraSource.CAMERA_FACING_FRONT;
 
-public class QRActivity extends AppCompatActivity {
+public class QRQMSActivity extends AppCompatActivity {
     BarcodeDetector barcodeDetector;
     CameraSource cameraSource;
     SurfaceView cameraView;
@@ -41,7 +41,7 @@ public class QRActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qr);
+        setContentView(R.layout.activity_qrqms);
         Bundle extras = getIntent().getExtras();
         memberEmail = extras.getString("memberEmail");
         deviceId = extras.getString("deviceId");

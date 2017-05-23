@@ -136,7 +136,7 @@ public class QMSActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(QMSActivity.this,"相機啟動,稍等一下!",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(QMSActivity.this,QRActivity.class);
+                Intent intent = new Intent(QMSActivity.this,QRQMSActivity.class);
                 intent.putExtra("deviceId",deviceId);
                 intent.putExtra("memberEmail",memberEmail);
                 intent.putExtra("number",TVQMSClientValue.getText().toString());
